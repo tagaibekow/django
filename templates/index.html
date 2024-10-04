@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer; /* Добавляем курсор для кнопок */
+        }
+        nav a.active {
+            text-decoration: underline;
+        }
+        section {
+            display: none; /* Скрываем все секции по умолчанию */
+            padding: 20px;
+            background-color: white;
+            margin: 10px;
+        }
+        section.active {
+            display: block; /* Показываем только активную секцию */
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Добро пожаловать на мой сайт</h1>
+    </header>
+
+    <nav>
+        <a href="#" class="active" data-target="home">Главная</a>
+        <a href="#" data-target="about">О нас</a>
+        <a href="#" data-target="services">Услуги</a>
+        <a href="#" data-target="contact">Контакты</a>
+    </nav>
+
+    <!-- Секции контента -->
+    <section id="home" class="active">
+        <h2>Главная страница</h2>
+        <p>Это главная страница вашего сайта. Здесь можно разместить основную информацию и приветствие!</p>
+    </section>
+
+    <section id="about">
+        <h2>О нас</h2>
+        <p>Это базовый шаблон веб-страницы. Вы можете изменить секции в соответствии с вашими нуждами. Добавьте больше страниц, настройте стили и интегрируйте ваш контент!</p>
+    </section>
+
+    <section id="services">
+        <h2>Наши услуги</h2>
+        <p>Мы предоставляем широкий спектр услуг, включая веб-разработку, дизайн и маркетинговые стратегии, чтобы помочь вашему бизнесу расти.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Свяжитесь с нами по электронной почте: tagaibekow99@gmail.com или по телефону: +996 (507) 144-196.</p>
+    </section>
+
+    <footer>
+        <p>© 2024 Мой сайт. Все права защищены.</p>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                sections.forEach(section => section.classList.remove('active'));
+
+                link.classList.add('active');
+                const targetSection = document.getElementById(link.getAttribute('data-target'));
+                targetSection.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

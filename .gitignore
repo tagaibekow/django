@@ -1,0 +1,31 @@
+# Файлы среды
+.env
+
+# Директория виртуального окружения
+venv/
+
+# Файлы базы данных
+db.sqlite3
+
+# Кэшированные файлы Python
+__pycache__/
+*.pyc
+
+# Логи
+*.log
+
+# Пакеты, собранные с помощью pip
+*.egg-info/
+dist/
+build/
+
+# Игнорировать файлы IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Игнорировать временные файлы
+*.tmp
+*.temp
+*.bak
